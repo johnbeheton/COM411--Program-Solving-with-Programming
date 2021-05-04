@@ -16,5 +16,3 @@ def run():
   plt.show()
 
 run()
-
-#you dont need the last line from him as he is using pycharm

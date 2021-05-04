@@ -11,6 +11,11 @@ def shop():
   }
   return items
 
+  def save_items(items = {}):
+    json_database = open("items.json", "w")
+    json.dump(items, json_database, intent = 4)
+    json_database.close()
+
 def view_all(products ={}):
   for i in products:
     print(i)
