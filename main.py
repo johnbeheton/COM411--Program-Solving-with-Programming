@@ -1,20 +1,17 @@
 import matplotlib.pyplot as plt
+import matplotlib.animation as animation
 
-def read_data(filename):
-  f = open(filename,"r")
-  content = f.readlines()
-  f.close
-  return content
+fig, ax =plt.subplots()
+
+def animate(frame):
+    global ax
+    ax.set_xlim(0,10)
+    ax.set_ylim(0,10)
+    
 
 def run():
-  data= read_data("temps.txt")
-  fig, axes = plt.subplots(1,2)
-  x = range(1,8,1)
-  y = data
-  axes[0].plot(x,y)
-  axes[1].bar(x,y)
-  plt.show()
-
-run()
-
-#you dont need the last line from him as he is using pycharm
+  fig, ax = plt.subplots()
+simple_animation = animation.FuncAnimation(fig, animate, frames = 10, interval = 100)
+plt.show()
+  
+run()  
